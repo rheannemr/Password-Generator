@@ -7,3 +7,4 @@ Below are a few examples of randomly generated passwords using the application.
 ![image](https://user-images.githubusercontent.com/71292617/99893045-718c3b00-2c30-11eb-9d61-bcfadeda4140.png)
 ![image](https://user-images.githubusercontent.com/71292617/99893140-48b87580-2c31-11eb-9b0f-0a619d97bf5d.png)
 
+https://rheannemr.github.io/Password-Generator/
