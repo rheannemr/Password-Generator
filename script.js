@@ -7,6 +7,7 @@ var alphaLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m
 var num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 var specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "\:", "\;", " < ", "=", " > ", " ? ", "@", "[", "\\", "]", " ^ ", "_", "`", "{", "|", "}", "~"];
 
+// Write password to the #password input
 function writePassword() { 
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -15,33 +16,37 @@ function writePassword() {
 
 }
 
+// Generate password
 function generatePassword() {
   
-  var passwordLength = parseInt(prompt("How long would you like your password to be? Must be between 8 and 128 characters"));
-  if (passwordLength < 8) {
-    alert("Your password must be 8 or more characters")
-  } else if (passwordLength > 128) {
-    alert("Your password cannot be more than 128 characters")
-  }
+// Prompt user to input password length
+var passwordLength = parseInt(prompt("How long would you like your password to be? Must be between 8 and 128 characters"));
+if (passwordLength < 8) {
+  alert("Your password must be 8 or more characters")
+} else if (passwordLength > 128) {
+  alert("Your password cannot be more than 128 characters")
+}
+
 
   var password = "";
   var charPool = "";
 
+// Asks if user wants lowercase letters in password
   var includeAlphaLower = confirm("Would you like your password to include lowercase letters?");
   if (includeAlphaLower) {
     charPool = charPool.concat(alphaLower);
   }
-
+// Asks if user wants uppercase letters in password
   var includeAlphaUpper = confirm("Would you like your password to include uppercase letters?");
   if (includeAlphaUpper) {
     charPool = charPool.concat(alphaUpper);
   }
-
+// Asks if user wants special characters in password
   var includeSpecialChar = confirm("Would you like your password to include special characters?");
   if (includeSpecialChar) {
     charPool = charPool.concat(specialChar);
   }
-
+// Asks if user wants numbers in password
   var includeNum = confirm("Would you like your password to include numbers?");
   if (includeNum) {
     charPool = charPool.concat(num);
@@ -55,9 +60,6 @@ function generatePassword() {
   return password;
 
 }
-
-
-// Write password to the #password input
 
 
 // Add event listener to generate button
