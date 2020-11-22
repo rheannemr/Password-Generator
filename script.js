@@ -18,6 +18,9 @@ function writePassword() {
 
 // Generate password
 function generatePassword() {
+
+  var password = "";
+  var charPool = [];
   
 // Prompt user to input password length
 var passwordLength = parseInt(prompt("How long would you like your password to be? Must be between 8 and 128 characters"));
@@ -26,29 +29,24 @@ if (passwordLength < 8) {
 } else if (passwordLength > 128) {
   alert("Your password cannot be more than 128 characters")
 }
-
-
-  var password = "";
-  var charPool = "";
-
 // Asks if user wants lowercase letters in password
   var includeAlphaLower = confirm("Would you like your password to include lowercase letters?");
-  if (includeAlphaLower) {
+  if (includeAlphaLower === true) {
     charPool = charPool.concat(alphaLower);
   }
 // Asks if user wants uppercase letters in password
   var includeAlphaUpper = confirm("Would you like your password to include uppercase letters?");
-  if (includeAlphaUpper) {
+  if (includeAlphaUpper === true) {
     charPool = charPool.concat(alphaUpper);
   }
 // Asks if user wants special characters in password
   var includeSpecialChar = confirm("Would you like your password to include special characters?");
-  if (includeSpecialChar) {
+  if (includeSpecialChar === true) {
     charPool = charPool.concat(specialChar);
   }
 // Asks if user wants numbers in password
   var includeNum = confirm("Would you like your password to include numbers?");
-  if (includeNum) {
+  if (includeNum === true) {
     charPool = charPool.concat(num);
   }
 
